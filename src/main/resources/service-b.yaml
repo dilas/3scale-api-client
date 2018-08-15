@@ -1,0 +1,34 @@
+---
+organizations:
+  - id: 9
+    name: Unicred
+  - id: 5
+    name: Cecred
+  - id: 3
+    name: Developer
+
+application:
+  name: Sample Application
+  description: Sample Application Description
+  plans:
+    - BronzePlan
+    - SilverPlan
+    - GoldPlan
+    - UnlimitedPlan
+
+service: Demo Service
+
+mapping:
+  rules:
+    - method: GET
+      pattern: /manage/health
+
+    - method: POST
+      pattern: /demo/{app}
+
+integration:
+  backend: http://echo-api.3scale.net
+  gateway:
+    staging: https://api-demo-uat.apps.cabal.com.br
+    production: https://api-demo.apps.cabal.com.br
+

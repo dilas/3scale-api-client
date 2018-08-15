@@ -1,0 +1,30 @@
+---
+organizations:
+  - id: 3
+    name: Developer
+
+application:
+  name: Sample Application
+  description: Sample Application Description
+  plans:
+    - UnlimitedPlan
+    - GoldPlan
+
+service: Demo Service
+
+mapping:
+  rules:
+    - name: Health
+      method: GET
+      pattern: /manage/health
+
+    - name: Solicitar novo cartão
+      method: POST
+      pattern: /demo/{app}
+
+integration:
+  backend: http://echo-api.3scale.net
+  gateway:
+    staging: https://api-demo-uat.apps.cabal.com.br
+    production: https://api-demo.apps.cabal.com.br
+
